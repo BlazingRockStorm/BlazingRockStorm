@@ -20,6 +20,6 @@ Here are some ideas to get you started:
 -->
 [![BlazingRockStorm's GitHub stats](https://github-readme-stats.vercel.app/api?username=BlazingRockStorm&show_icons=true&theme=tokyonight)](https://github.com/BlazingRockStorm/github-readme-stats)
 
-# GitHub Streak Stats
+# GitHub Stats
 
-[![GitHub Streak](https://github-readme-streak-stats.herokuapp.com?user=BlazingRockStorm&theme=tokyonight&border_radius=10)](https://git.io/streak-stats) 
+[![BlazingRockStorm activity graph](https://github-readme-activity-graph.vercel.app/graph?username=BlazingRockStorm&theme=tokyonight)](https://github.com/ashutosh00710/github-readme-activity-graph)
