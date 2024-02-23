@@ -8,10 +8,11 @@ jobs:
   update-readme:
     name: Update Readme with badges
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Badges - Readme
         uses: pemtajo/badge-readme@main
         with:
-          COMMIT_MESSAGE: "My commit message to update badges" # optional
           CREDLY_USER: duc-quan-hoang
           CREDLY_SORT: RECENT
