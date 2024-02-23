@@ -28,8 +28,8 @@ System/DevOps Engineer. Ruby believer.
 [![Professional Scrum Master™ I (PSM I)](https://images.credly.com/size/110x110/images/a2790314-008a-4c3d-9553-f5e84eb359ba/image.png)](http://www.credly.com/badges/02b796b7-b597-4cd7-b0d5-c547de1e23d4 "Professional Scrum Master™ I (PSM I)")
 [![AWS Certified Solutions Architect – Associate](https://images.credly.com/size/110x110/images/0e284c3f-5164-4b21-8660-0d84737941bc/image.png)](http://www.credly.com/badges/17efe8cf-9ea6-459f-ade9-dc22fff82000 "AWS Certified Solutions Architect – Associate")
 <!--END_SECTION:badges-->
-[![Ruby Certified Ruby Examination Silver](https://badges.images.credential.net/1495071229333.png)](https://www.credential.net/d6b90bcc-0a14-4039-94ba-5443ea9dd343 "Ruby Certified Ruby Examination Silver")
-[![Ruby Certified Ruby Examination Gold Ver 3](https://templates.images.credential.net/16599277022875216138354534652590.png)](https://www.credential.net/3c8a0b29-cc9d-4249-a148-ddf1800e53d9 "Ruby Certified Ruby Examination Gold Ver 3")
+[![Ruby Certified Ruby Examination Silver](https://badges.images.credential.net/1495071229333.png =110x)](https://www.credential.net/d6b90bcc-0a14-4039-94ba-5443ea9dd343 "Ruby Certified Ruby Examination Silver")
+[![Ruby Certified Ruby Examination Gold Ver 3](https://templates.images.credential.net/16599277022875216138354534652590.png  =110x)](https://www.credential.net/3c8a0b29-cc9d-4249-a148-ddf1800e53d9 "Ruby Certified Ruby Examination Gold Ver 3")
 
 # GitHub Stats
 
