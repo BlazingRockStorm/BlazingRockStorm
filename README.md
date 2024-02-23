@@ -2,6 +2,8 @@
 Hi there 👋 I'm Quan.
 System/DevOps Engineer. Ruby believer.
 
+![](https://komarev.com/ghpvc/?username=BlazingRockStorm)
+
 <!--
 **BlazingRockStorm/BlazingRockStorm** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
