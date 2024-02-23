@@ -4,6 +4,11 @@ System/DevOps Engineer. Ruby believer.
 
 ![](https://komarev.com/ghpvc/?username=BlazingRockStorm)
 
+# Certs
+
+<!--START_SECTION:badges-->
+<!--END_SECTION:badges-->
+
 # GitHub Stats
 
 [![BlazingRockStorm's GitHub stats](https://github-readme-stats.vercel.app/api?username=BlazingRockStorm&show_icons=true&theme=tokyonight)](https://github.com/BlazingRockStorm/github-readme-stats)
