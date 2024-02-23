@@ -19,3 +19,7 @@ Here are some ideas to get you started:
 - ⚡ Fun fact: ...
 -->
 [![BlazingRockStorm's GitHub stats](https://github-readme-stats.vercel.app/api?username=BlazingRockStorm&show_icons=true&theme=tokyonight)](https://github.com/BlazingRockStorm/github-readme-stats)
+
+# GitHub Streak Stats
+
+[![GitHub Streak](https://github-readme-streak-stats.herokuapp.com?user=BlazingRockStorm&theme=tokyonight&border_radius=10)](https://git.io/streak-stats) 
