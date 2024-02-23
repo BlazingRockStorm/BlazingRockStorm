@@ -22,4 +22,4 @@ Here are some ideas to get you started:
 
 # GitHub Stats
 
-[![BlazingRockStorm activity graph](https://github-readme-activity-graph.vercel.app/graph?username=BlazingRockStorm&theme=tokyonight)](https://github.com/ashutosh00710/github-readme-activity-graph)
+[![BlazingRockStorm activity graph](https://github-readme-activity-graph.vercel.app/graph?username=BlazingRockStorm&theme=react-dark)](https://github.com/ashutosh00710/github-readme-activity-graph)
