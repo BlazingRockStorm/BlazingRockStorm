@@ -4,6 +4,12 @@ System/DevOps Engineer. Ruby believer.
 
 ![](https://komarev.com/ghpvc/?username=BlazingRockStorm)
 
+# GitHub Stats
+
+[![BlazingRockStorm's GitHub stats](https://github-readme-stats.vercel.app/api?username=BlazingRockStorm&show_icons=true&theme=tokyonight)](https://github.com/BlazingRockStorm/github-readme-stats)
+
+[![BlazingRockStorm activity graph](https://github-readme-activity-graph.vercel.app/graph?username=BlazingRockStorm&theme=react-dark)](https://github.com/ashutosh00710/github-readme-activity-graph)
+
 <!--
 **BlazingRockStorm/BlazingRockStorm** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
@@ -18,8 +24,3 @@ Here are some ideas to get you started:
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...
 -->
-[![BlazingRockStorm's GitHub stats](https://github-readme-stats.vercel.app/api?username=BlazingRockStorm&show_icons=true&theme=tokyonight)](https://github.com/BlazingRockStorm/github-readme-stats)
-
-# GitHub Stats
-
-[![BlazingRockStorm activity graph](https://github-readme-activity-graph.vercel.app/graph?username=BlazingRockStorm&theme=react-dark)](https://github.com/ashutosh00710/github-readme-activity-graph)
