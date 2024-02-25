@@ -4,8 +4,14 @@ System/DevOps Engineer. Ruby believer.
 
 ![](https://komarev.com/ghpvc/?username=BlazingRockStorm)
 
+### 📫 How to reach me:
+
+[![image](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/hoang-quan-8418a7155/)
+[![image](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/gryqhon_origami/)
+[![image](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:quanhoangd129@gmail.com)
+
 # Certs
-## Credential
+## Credentials:
 
 [<img src="https://badges.images.credential.net/1495071229333.png" width="110">](https://www.credential.net/d6b90bcc-0a14-4039-94ba-5443ea9dd343 "Ruby Certified Ruby Examination Silver")
 [<img src="https://templates.images.credential.net/16599277022875216138354534652590.png" width="110">](https://www.credential.net/3c8a0b29-cc9d-4249-a148-ddf1800e53d9 "Ruby Certified Ruby Examination Gold Ver 3")
@@ -51,7 +57,6 @@ Here are some ideas to get you started:
 - 👯 I’m looking to collaborate on ...
 - 🤔 I’m looking for help with ...
 - 💬 Ask me about ...
-- 📫 How to reach me: ...
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...
 -->
