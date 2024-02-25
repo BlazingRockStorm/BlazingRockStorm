@@ -6,7 +6,7 @@ System/DevOps Engineer. Ruby believer.
 
 ### My Skills
 
-[![My Skills](https://skillicons.dev/icons?i=ruby,python,js,ts,docker,aws,react,flutter)](https://skillicons.dev)
+[![My Skills](https://skillicons.dev/icons?i=ruby,python,js,ts,docker,aws,react,flutter,vscode)](https://skillicons.dev)
 
 ### 📫 How to reach me:
 
