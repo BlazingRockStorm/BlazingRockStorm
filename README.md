@@ -4,6 +4,10 @@ System/DevOps Engineer. Ruby believer.
 
 ![](https://komarev.com/ghpvc/?username=BlazingRockStorm)
 
+### My Skills
+
+[![My Skills](https://skillicons.dev/icons?i=ruby,python,js,ts,docker,aws,react,flutter)](https://skillicons.dev)
+
 ### 📫 How to reach me:
 
 [![image](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/hoang-quan-8418a7155/)
