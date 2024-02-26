@@ -26,6 +26,7 @@ System/DevOps Engineer. Ruby believer.
 
 ## Credly:
 <!--START_SECTION:badges-->
+[![AWS Knowledge: Compute](https://images.credly.com/size/110x110/images/eba18772-5ecf-471b-b8af-dda79815b544/image.png)](http://www.credly.com/badges/487e7219-0ee0-42b3-90a0-88486e679ee2 "AWS Knowledge: Compute")
 [![AWS Knowledge: Amazon Braket](https://images.credly.com/size/110x110/images/cb9ef1ba-f010-4a39-881b-65dce3e5df68/image.png)](http://www.credly.com/badges/dce0a47b-a903-40fe-86a0-92031abda51a "AWS Knowledge: Amazon Braket")
 [![Professional Scrum™ with Kanban I (PSK I)](https://images.credly.com/size/110x110/images/78c2bf96-9468-40ac-aee7-3eac9d79a6d5/image.png)](http://www.credly.com/badges/15fdbca9-e0e7-4380-9204-b66a4904dc94 "Professional Scrum™ with Kanban I (PSK I)")
 [![AWS Knowledge: Migration Foundations](https://images.credly.com/size/110x110/images/4163dc96-eec3-49c2-87b3-6a98172e160c/image.png)](http://www.credly.com/badges/a59c253a-9b00-4ce9-a571-b0dfb0d3ebf7 "AWS Knowledge: Migration Foundations")
