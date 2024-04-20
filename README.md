@@ -26,6 +26,7 @@ System/DevOps Engineer. Ruby believer.
 
 ## Credly:
 <!--START_SECTION:badges-->
+[![AWS Cloud Quest: Networking](https://images.credly.com/size/110x110/images/c483e5e6-580a-4ed8-b4b6-91219526a326/image.png)](http://www.credly.com/badges/606cc8ff-36cb-4745-812b-58094940b2cc "AWS Cloud Quest: Networking")
 [![AWS Cloud Quest: Data Analytics](https://images.credly.com/size/110x110/images/2cd965b0-5f5d-4510-ab05-cfa2f80342a1/image.png)](http://www.credly.com/badges/fae7bc5b-a6dd-4eda-a47e-db8b1c16f517 "AWS Cloud Quest: Data Analytics")
 [![AWS Cloud Quest: Serverless Developer](https://images.credly.com/size/110x110/images/9a2fd02b-52ab-448d-9d19-fd9b68efe1f6/image.png)](http://www.credly.com/badges/b85a46ae-1d03-4800-b9b7-b69b803c33d6 "AWS Cloud Quest: Serverless Developer")
 [![AWS Cloud Quest: Solutions Architect](https://images.credly.com/size/110x110/images/9e9e7ef7-384f-4636-8743-1b89a68fb46b/image.png)](http://www.credly.com/badges/ad876b52-a4f8-4486-a28e-5216d735daf1 "AWS Cloud Quest: Solutions Architect")
