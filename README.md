@@ -26,6 +26,7 @@ System/DevOps Engineer. Ruby believer.
 
 ## Credly:
 <!--START_SECTION:badges-->
+[![AWS Industry Quest: Financial Services](https://images.credly.com/size/110x110/images/ac4918fd-87d6-4283-b896-52314f703327/image.png)](http://www.credly.com/badges/b55ffd5f-b377-4724-aca7-d94bd8f267e5 "AWS Industry Quest: Financial Services")
 [![AWS Industry Quest: Manufacturing and Auto](https://images.credly.com/size/110x110/images/de349340-fe28-49a6-8645-657113ee7c11/image.png)](http://www.credly.com/badges/61ec5967-c145-4eaf-929f-8b8cabe872a6 "AWS Industry Quest: Manufacturing and Auto")
 [![AWS Cloud Quest: Security](https://images.credly.com/size/110x110/images/e66468bd-5a58-4136-8fb5-994e13501cf5/image.png)](http://www.credly.com/badges/40f46b86-dd6e-484b-8d0e-1123d1e806e2 "AWS Cloud Quest: Security")
 [![AWS Cloud Quest: Machine Learning](https://images.credly.com/size/110x110/images/d85070dc-b233-4848-9db4-c55319435b67/image.png)](http://www.credly.com/badges/077c1cf3-f552-4083-8515-20127074cce7 "AWS Cloud Quest: Machine Learning")
