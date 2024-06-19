@@ -16,3 +16,4 @@ jobs:
         with:
           CREDLY_USER: duc-quan-hoang
           CREDLY_SORT: RECENT
+          BADGE_SIZE: 110
