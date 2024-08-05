@@ -1,6 +1,6 @@
 # About me
 Hi there 👋 I'm Quan.
-System/DevOps Engineer. Ruby believer.
+System/DevOps Engineer. Ruby advocator.
 
 ![](https://komarev.com/ghpvc/?username=BlazingRockStorm)
 
