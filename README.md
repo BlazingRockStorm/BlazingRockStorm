@@ -26,6 +26,7 @@ System/DevOps Engineer. Ruby advocator.
 
 ## Credly:
 <!--START_SECTION:badges-->
+[![AWS Knowledge: Amazon EKS](https://images.credly.com/size/110x110/images/9bcbde6d-1754-4617-9337-124f7b10a6c2/image.png)](http://www.credly.com/badges/7cc6ee6c-8ff1-453f-9428-1cedf0a63b42 "AWS Knowledge: Amazon EKS")
 [![Well-Architected Proficient](https://images.credly.com/size/110x110/images/b870667f-00a3-48d7-b988-9c02b441b883/image.png)](http://www.credly.com/badges/dcc7ff32-4469-419c-8de4-ec596a70dc4c "Well-Architected Proficient")
 [![Amazon Connect Communications Specialist](https://images.credly.com/size/110x110/images/60dbe6ec-05b8-45cd-9deb-d220bc19b7e1/image.png)](http://www.credly.com/badges/a9d7faea-f531-4924-8250-939179c10613 "Amazon Connect Communications Specialist")
 [![Amazon Connect Developer Specialist](https://images.credly.com/size/110x110/images/d68afdb9-6fdc-4739-be07-67c919d58348/image.png)](http://www.credly.com/badges/db50dbcc-fea6-41aa-8044-c57911cbdb0a "Amazon Connect Developer Specialist")
