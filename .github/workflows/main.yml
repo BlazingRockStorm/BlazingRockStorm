@@ -2,8 +2,7 @@ name: Update badges
 
 on:
   schedule:
-    # Runs at 15:00 UTC
-    - cron: "0 15 * * *"
+    - cron: "0 15 1 * *"
 jobs:
   update-readme:
     name: Update Readme with badges
@@ -15,5 +14,4 @@ jobs:
         uses: pemtajo/badge-readme@main
         with:
           CREDLY_USER: duc-quan-hoang
-          CREDLY_SORT: RECENT
           BADGE_SIZE: 110
