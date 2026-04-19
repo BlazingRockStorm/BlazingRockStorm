@@ -1,192 +1,213 @@
 # Skills
 
-This document outlines my professional skills based on certifications and hands-on experience. It is intended for use by AI agents when designing or working on systems, and as a public reference for collaborators.
+Practical skills reference. Intended for AI agents when designing or working on systems, and as a public profile for collaborators.
 
 ---
 
 ## Ruby
 
-**Certifications:**
-- Ruby Certified Ruby Examination Silver
-- Ruby Certified Ruby Examination Gold Ver 3
+### Object Model & Metaprogramming
+- Eigenclass (singleton class) manipulation: defining per-object methods, `class << self` for DSL-style APIs
+- Dynamic dispatch with `send` / `public_send`, safe navigation (`&.`), and `respond_to?` guards
+- `method_missing` + `respond_to_missing?` for proxy objects and decorator patterns
+- `define_method` for generating families of methods at class load time (e.g., attribute accessors, scope builders)
+- Module hooks: `included`, `extended`, `prepended`, `inherited`, `method_added` for framework-style behaviour injection
+- `prepend` for clean method wrapping without alias chaining (e.g., instrumentation, logging, caching layers)
+- `Refinements` for safely scoping monkey-patches to specific files or modules
+- `TracePoint` for runtime introspection: tracing method calls, line execution, class definitions
 
-**Core Language**
-- Object-oriented programming: classes, modules, mixins, inheritance, encapsulation
-- Ruby syntax and idioms: blocks, procs, lambdas, iterators, enumerables
-- Metaprogramming: `method_missing`, `define_method`, `open classes`, `hooks`
-- Exception handling and custom error classes
-- Regular expressions and string manipulation
-- File I/O and standard library usage
+### Blocks, Procs & Closures
+- Yielding with explicit `&block` capture vs implicit `yield` — choosing based on whether the block needs to be stored or forwarded
+- `Proc.new` vs `lambda` vs `->`: differences in arity checking and `return` semantics
+- Currying and partial application with `Proc#curry` for building composable filters and validators
+- Closures over local bindings for building callback chains and deferred execution
 
-**Memory & Performance**
-- Object lifecycle and garbage collection awareness
-- Frozen objects and immutability patterns
-- Efficient use of lazy enumerators
+### Enumerable & Collection Patterns
+- `Enumerable` protocol: implementing `each` + `include Enumerable` to get `map`, `select`, `reduce`, `flat_map`, `group_by`, `tally`, `filter_map` for free
+- `Enumerator::Lazy` for memory-efficient processing of large or infinite sequences (e.g., streaming CSV rows, paginated API results)
+- `each_with_object` for accumulator patterns without mutable outer state
+- Custom `Enumerator.new` for wrapping external iterators (e.g., database cursor, file lines, API pagination)
 
-**Concurrency**
-- Threads and the Global Interpreter Lock (GIL)
-- Fibers and cooperative concurrency
-- `Mutex` and thread-safe patterns
+### Concurrency & Parallelism
+- `Ractor` (Ruby 3+) for true parallel execution without shared mutable state — message-passing between actors
+- `Fiber` and `Fiber.schedule` for cooperative async I/O (e.g., non-blocking HTTP calls, async database queries)
+- `Thread` + `Mutex` + `ConditionVariable` for classic shared-state concurrency; `Queue` / `SizedQueue` for producer-consumer patterns
+- `Thread::Pool` patterns for bounding concurrency on batch jobs (e.g., parallel image processing, bulk API calls)
+- GVL (Global VM Lock) awareness: CPU-bound work stays serialized in CRuby threads; use `Ractor` or fork-based parallelism for CPU tasks
 
-**Tooling & Ecosystem**
-- Bundler and Gemfile dependency management
-- RubyGems packaging and versioning
-- RSpec / Minitest for unit and integration testing
-- Rake for task automation
-- Ruby Version Manager (RVM / rbenv)
+### Error Handling & Resilience
+- `retry` with exponential backoff in `rescue` blocks for transient failures (network timeouts, rate limits)
+- Custom exception hierarchies: domain-specific base error class with typed subclasses for structured `rescue` chains
+- `ensure` for resource cleanup (file handles, DB connections, temp files) regardless of exception path
+- `throw` / `catch` for non-local jumps in deeply nested iterations (e.g., early exit from search)
 
-**Web Development**
-- Ruby on Rails: MVC, ActiveRecord, ActiveSupport, routing, middleware
-- Sinatra for lightweight APIs
-- RESTful API design and JSON serialization
+### Testing
+- RSpec: `describe` / `context` / `it` structure, `let` / `let!` for lazy/eager fixtures, `subject` for DRY specs
+- Test doubles: `instance_double` with verified doubles, `allow` / `expect` message expectations, `have_received` for spies
+- Shared examples (`shared_examples_for`) and shared contexts for reducing duplication across spec files
+- FactoryBot: `factory`, `trait`, `transient` attributes, `sequence` for unique values, `association` for nested records
+- Minitest: `assert_*` / `refute_*` style, `setup` / `teardown` hooks, `Minitest::Mock` for lightweight mocking
+- SimpleCov for line and branch coverage reporting; integrating coverage gates into CI
+
+### Rails-Specific
+- ActiveRecord: scopes, eager loading (`includes` / `preload` / `eager_load`), N+1 detection with Bullet, counter caches, polymorphic associations, STI vs delegated types
+- ActiveJob + Sidekiq: background job processing, retry strategies, dead-letter queues, unique job deduplication, cron-scheduled recurring jobs
+- ActionCable: real-time WebSocket channels, broadcasting patterns, connection authentication
+- Rails engines for modular monolith architecture: isolating bounded contexts into mountable engines with their own routes, models, and migrations
+- Rack middleware: writing custom middleware for request logging, rate limiting, tenant detection in multi-tenant apps
+- Database migrations: zero-downtime schema changes (add column with default, backfill, then add constraint), `strong_migrations` gem for safety checks
+- Caching: Russian doll fragment caching, low-level `Rails.cache.fetch` with expiry, cache busting with versioned keys
+
+### Gems & Tooling
+- Bundler: `Gemfile` groups, `bundle exec` isolation, `Gemfile.lock` for reproducible builds, private gem server configuration
+- Rubocop for style enforcement; custom `.rubocop.yml` with project-specific cops and exclusions
+- Pry / IRB: runtime debugging with `binding.pry`, object introspection with `ls`, `show-method`, `cd`
+- Sorbet / RBS for gradual type checking: `sig` annotations, `T.let`, `T.nilable`, typed interfaces for critical paths
 
 ---
 
 ## AWS
 
-**Certifications:**
-- AWS Certified SysOps Administrator – Associate
-- AWS Certified Solutions Architect – Associate
-- AWS Certified Developer – Associate
-- Well-Architected Proficient
-- AWS Cloud Quest: Cloud Practitioner, Solutions Architect, Serverless Developer, Data Analytics, Networking, Machine Learning, Security, Generative AI Practitioner
-- AWS Industry Quest: Manufacturing & Auto, Financial Services, Healthcare
-- AWS Knowledge: Serverless, Object Storage, Cloud Essentials, Data Migration, File Storage, Block Storage, Storage Core, Storage Technologist, Data Protection & Disaster Recovery, Migration Foundations, Compute, Events & Workflows, Architecting, Business Intelligence, Security Champion, Amazon ECS, Amazon EKS, Amazon Braket, Advanced PostgreSQL for Aurora & RDS, Amazon Connect (Fundamentals, Developer, Communications Specialist, AI Fundamentals), Amazon Q Developer Fundamentals, Media & Entertainment (Direct-to-Consumer & Broadcast Foundations, Content Production Foundations), AWS for Games: Cloud Game Development
+### Networking & VPC Design
+- Multi-AZ VPC layouts: public/private/isolated subnets per AZ, NAT Gateway placement for egress, VPC endpoints (Gateway for S3/DynamoDB, Interface for other services) to avoid NAT costs
+- Security group layering: separate SGs for ALB → app → database tiers, referencing SG IDs instead of CIDR blocks for intra-VPC rules
+- Transit Gateway for hub-and-spoke connectivity across multiple VPCs and accounts; Route table associations for traffic segmentation
+- VPC Flow Logs → CloudWatch Logs Insights for troubleshooting connectivity issues (rejected packets, unexpected traffic paths)
+- PrivateLink for exposing internal services to consumers in other VPCs/accounts without internet traversal
 
-**Core Infrastructure**
-- EC2: instance types, AMIs, Auto Scaling Groups, placement groups, lifecycle hooks
-- VPC: subnets, route tables, security groups, NACLs, VPC peering, PrivateLink, Transit Gateway
-- IAM: users, roles, policies, permission boundaries, SCP (Service Control Policies), cross-account access
-- Route 53: DNS routing policies (simple, weighted, latency, failover, geolocation)
+### Compute
+- EC2 Auto Scaling: target tracking policies (CPU, request count per target), step scaling for bursty workloads, warm pools for faster scale-out, mixed instances with Spot for cost savings
+- Launch templates with user data scripts for bootstrapping (install agents, pull config from SSM Parameter Store, join ECS cluster)
+- Graviton (ARM) instances for better price-performance on web servers, containerized workloads, and build pipelines
+- Spot Instances: capacity-optimized allocation strategy, Spot interruption handling via EC2 metadata + 2-minute warning, Spot Fleet diversification
 
-**Compute & Containers**
-- AWS Lambda: event-driven architecture, layers, provisioned concurrency, function URLs
-- Amazon ECS: task definitions, services, Fargate vs EC2 launch types
-- Amazon EKS: managed Kubernetes, node groups, Fargate profiles
-- Elastic Beanstalk for application deployment
+### Containers
+- ECS on Fargate: task definition sizing (CPU/memory), service auto-scaling (target tracking on CPU or custom CloudWatch metrics), service discovery via Cloud Map
+- ECS deployment strategies: rolling update with `minimumHealthyPercent` / `maximumPercent`, blue/green via CodeDeploy with ALB target group switching, circuit breaker for automatic rollback on failed deployments
+- EKS: managed node groups with Cluster Autoscaler or Karpenter for right-sizing, Fargate profiles for isolating batch workloads, IRSA (IAM Roles for Service Accounts) for pod-level permissions
+- ECR: image lifecycle policies for cleaning untagged images, cross-region replication, image scanning on push with Inspector
 
-**Storage**
-- S3: bucket policies, lifecycle rules, versioning, replication, storage classes (Standard, IA, Glacier), S3 Select
-- EBS: volume types (gp3, io2, st1, sc1), snapshots, encryption
-- EFS: shared file storage, mount targets, performance modes
-- AWS Backup and data protection strategies
-- Storage Gateway and hybrid cloud storage
-- DataSync and Snow family for data migration
+### Serverless
+- Lambda: function sizing (memory/CPU trade-off), cold start mitigation (provisioned concurrency, SnapStart for Java), layers for shared dependencies, Lambda extensions for observability
+- Event-driven patterns: S3 → Lambda for file processing, SQS → Lambda with batch window and partial failure reporting (`ReportBatchItemFailures`), EventBridge rules for scheduled or cross-account events
+- Step Functions: Express vs Standard workflows, `Map` state for parallel fan-out, `Choice` state for branching, error handling with `Retry` / `Catch`, callback patterns with task tokens
+- API Gateway: REST APIs with Lambda proxy integration, request validation via JSON Schema models, Cognito/Lambda authorizers, usage plans with API keys for rate limiting per consumer
 
-**Databases**
-- RDS: Multi-AZ, read replicas, parameter groups, performance insights
-- Aurora: global databases, serverless v2, PostgreSQL-compatible features
-- DynamoDB: partition keys, GSIs, LSIs, DynamoDB Streams, DAX caching
-- ElastiCache: Redis and Memcached cluster strategies
+### Storage
+- S3: lifecycle policies transitioning objects through Standard → IA → Glacier IR → Glacier Deep Archive based on access patterns; S3 Intelligent-Tiering for unpredictable access
+- S3 event-driven pipelines: PUT event → SQS → Lambda for async processing; S3 Batch Operations for bulk tagging, copying, or invoking Lambda on millions of objects
+- Cross-region replication with S3 Replication Rules for disaster recovery; same-region replication for log aggregation across accounts
+- EBS: gp3 with independently tunable IOPS/throughput for database volumes, io2 Block Express for latency-sensitive workloads, EBS snapshots with DLM (Data Lifecycle Manager) for automated backup rotation
+- EFS: bursting vs provisioned throughput modes, EFS Access Points for application-specific mount paths with POSIX user mapping, EFS-to-EFS cross-region replication
 
-**Serverless & Events**
-- API Gateway: REST and HTTP APIs, authorizers, usage plans, throttling
-- SQS: standard vs FIFO queues, dead-letter queues, long polling
-- SNS: fan-out patterns, message filtering
-- EventBridge: rules, event buses, schema registry
-- Step Functions: state machines, error handling, parallel and map states
-- Kinesis: Data Streams, Firehose, Data Analytics
+### Databases
+- RDS PostgreSQL: Multi-AZ for automatic failover, read replicas for read scaling, Performance Insights for identifying slow queries, pg_stat_statements analysis, parameter group tuning (shared_buffers, work_mem, effective_cache_size)
+- Aurora PostgreSQL: global databases for cross-region DR with <1s replication lag, Aurora Serverless v2 for variable workloads, cloning for instant non-production environments
+- DynamoDB: single-table design with composite keys (PK/SK) and GSI overloading for access pattern flexibility, on-demand vs provisioned capacity, TTL for automatic item expiry, DynamoDB Streams → Lambda for change data capture
+- ElastiCache Redis: cluster mode for horizontal sharding, read replicas for read-heavy workloads, Redis Streams for lightweight event streaming, cache-aside pattern with TTL-based invalidation
 
-**Security & Compliance**
-- KMS: CMKs, key policies, envelope encryption
-- Secrets Manager and Parameter Store for secrets management
-- CloudTrail for auditing and governance
-- AWS Config for compliance rules and conformance packs
-- Security Hub, GuardDuty, Inspector, Macie
+### CI/CD & Infrastructure as Code
+- CodePipeline: source (CodeCommit/GitHub) → build (CodeBuild) → deploy (CodeDeploy/ECS/CloudFormation) with manual approval gates for production
+- CodeBuild: buildspec.yml with phases (install, pre_build, build, post_build), caching (S3/local) for dependency speed-up, custom build images for specialized toolchains
+- CodeDeploy: blue/green deployments for EC2/ECS with traffic shifting (canary 10% → 100%, linear 10% every 5 min), automatic rollback on CloudWatch alarm triggers
+- CloudFormation: nested stacks for reusable components, cross-stack references with Exports/Imports, custom resources (Lambda-backed) for unsupported resources, drift detection for manual change auditing
+- CDK: TypeScript/Python constructs for type-safe IaC, L2 constructs for sensible defaults, `cdk diff` for change previewing, `Aspects` for enforcing tagging and compliance policies across stacks
+- SAM: `template.yaml` for Lambda + API Gateway + DynamoDB local development, `sam local invoke` / `sam local start-api` for local testing
 
-**Monitoring & Operations**
-- CloudWatch: metrics, alarms, dashboards, Logs Insights, Contributor Insights
-- AWS X-Ray for distributed tracing
-- Systems Manager: Session Manager, Patch Manager, Automation runbooks
-- OpsWorks, Trusted Advisor, AWS Health
+### Monitoring, Logging & Observability
+- CloudWatch: custom metrics with `put-metric-data`, composite alarms combining multiple metric conditions, Logs Insights queries for pattern extraction from application logs, metric filters for turning log patterns into alarms
+- X-Ray: instrumenting Lambda, ECS, and API Gateway for distributed tracing, X-Ray daemon sidecar in ECS tasks, service map for visualizing latency bottlenecks across microservices
+- CloudTrail: organization trail for multi-account API auditing, CloudTrail Lake for SQL-based querying of events, integration with EventBridge for real-time alerting on sensitive API calls (e.g., IAM policy changes)
 
-**Networking & Content Delivery**
-- CloudFront: distributions, origins, cache behaviors, signed URLs
-- Elastic Load Balancing: ALB, NLB, listener rules, sticky sessions
-- AWS Global Accelerator
+### Security & Access Control
+- IAM: least-privilege policies using `Condition` keys (e.g., `aws:SourceVpc`, `aws:PrincipalOrgID`), permission boundaries for delegated admin, SCP guardrails at the OU level in AWS Organizations
+- Secrets Manager: automatic rotation with Lambda rotation functions for RDS credentials, cross-account secret sharing via resource policies
+- KMS: customer-managed keys with key policies and grants, envelope encryption for application-level data protection, automatic key rotation
+- WAF: rate-based rules for DDoS mitigation, managed rule groups (AWS, marketplace) for OWASP Top 10, custom rules for geo-blocking or IP reputation filtering
 
-**Developer Tools & CI/CD**
-- CodeCommit, CodeBuild, CodeDeploy, CodePipeline
-- CloudFormation: stacks, nested stacks, change sets, drift detection
-- CDK: infrastructure as code with familiar programming languages
-- SAM: serverless application model for Lambda-based applications
-
-**Cost & Architecture**
-- AWS Well-Architected Framework: Operational Excellence, Security, Reliability, Performance Efficiency, Cost Optimization, Sustainability
-- Cost Explorer, Budgets, Savings Plans, Reserved Instances
+### Cost Optimization
+- Right-sizing with Compute Optimizer recommendations for EC2, Lambda, and EBS
+- Savings Plans (Compute/EC2 Instance) and Reserved Instances for predictable baseline workloads
+- Spot for fault-tolerant batch processing, CI/CD build agents, and dev/test environments
+- S3 storage class analysis and Intelligent-Tiering for reducing storage costs without manual lifecycle management
+- Cost allocation tags + Cost Explorer for per-team/per-service cost attribution and budgeting alerts
 
 ---
 
 ## Agile / Scrum
 
-**Certifications:**
-- Professional Agile Leadership™ I (PAL I)
-- Professional Scrum Master™ I (PSM I)
-- Professional Scrum Master™ II (PSM II)
-- Professional Scrum Developer™ I (PSD I)
-- Scaled Professional Scrum™ (SPS) — Nexus Framework
-- Professional Scrum™ with Kanban I (PSK I)
+### Sprint Execution
+- Facilitating Sprint Planning: helping the team decompose Product Backlog Items into tasks, defining clear Sprint Goals that provide focus and enable "Done" decisions
+- Running effective Daily Scrums: keeping it under 15 min, focused on progress toward Sprint Goal rather than status reporting, surfacing blockers early
+- Sprint Review as a feedback loop: demonstrating working Increment to stakeholders, capturing feedback directly into Product Backlog refinement
+- Sprint Retrospective techniques: Start/Stop/Continue, 4Ls (Liked, Learned, Lacked, Longed For), sailboat retro, dot voting for action item prioritization
+- Tracking improvement actions across Sprints to ensure retro outcomes don't get forgotten
 
-### Scrum Foundations
-- Scrum Values: Commitment, Courage, Focus, Openness, Respect
-- Scrum Theory: empiricism (transparency, inspection, adaptation)
-- Scrum Roles: Product Owner, Scrum Master, Developers
-- Scrum Events: Sprint, Sprint Planning, Daily Scrum, Sprint Review, Sprint Retrospective
-- Scrum Artifacts: Product Backlog, Sprint Backlog, Increment; with commitments (Product Goal, Sprint Goal, Definition of Done)
+### Product Backlog Management
+- Writing user stories with acceptance criteria: "As a [role], I want [capability], so that [benefit]" with specific, testable conditions
+- Backlog refinement: breaking epics into vertical slices that deliver end-to-end user value, INVEST criteria for well-formed stories
+- Estimation: Planning Poker with Fibonacci sequence, relative sizing with T-shirt sizes, using reference stories as calibration points
+- Ordering by value/risk/dependency: prioritizing high-value, high-uncertainty items early for fast learning
+- Definition of Ready: ensuring items entering Sprint Planning are small enough, understood, and have clear acceptance criteria
 
-### Scrum Mastery (PSM II)
-- Advanced facilitation techniques for dysfunctional team dynamics
-- Coaching the organization: removing systemic impediments
-- Applying Scrum in complex and non-software environments
-- Evidence-based management (EBM): Current Value, Unrealized Value, Ability to Innovate, Time-to-Market
-- Fostering self-management and cross-functional teams at scale
+### Scrum Mastery
+- Detecting and addressing team dysfunctions: lack of trust, fear of conflict, avoidance of accountability, inattention to results
+- Coaching Product Owners on effective backlog ordering: maximizing value delivery, managing stakeholder expectations, saying "no" to low-priority requests
+- Removing organizational impediments: escalating cross-team blockers, negotiating for dedicated team capacity, shielding teams from mid-Sprint scope changes
+- Evidence-Based Management: measuring Current Value (revenue, satisfaction), Time-to-Market (release frequency, cycle time), Ability to Innovate (technical debt ratio, defect trends), Unrealized Value (market share, customer requests backlog)
+- Fostering self-management: moving from "Scrum Master assigns tasks" to team members pulling work and collectively owning Sprint commitments
 
-### Agile Leadership (PAL I)
-- Leading with an agile mindset vs. traditional command-and-control
-- Creating an environment for agile teams to thrive
-- Connecting business agility to organizational outcomes
-- Balancing exploration and exploitation in product strategy
+### Agile Leadership
+- Creating psychological safety: enabling team members to raise risks, admit mistakes, and challenge decisions without fear
+- Decentralized decision-making: empowering teams to make technical and process decisions within guardrails, reserving only strategic decisions for leadership
+- Connecting team-level outcomes to business goals: OKRs (Objectives and Key Results) aligned across product, engineering, and business
+- Budgeting for agile: moving from project-based funding to persistent team funding with value-stream alignment
 
-### Scrum with Kanban (PSK I)
-- Flow-based metrics: cycle time, throughput, WIP, cumulative flow diagrams
-- Visualizing workflow and limiting WIP within Sprints
-- Using Kanban practices to improve flow without replacing Scrum
-- Forecasting using probabilistic methods (Monte Carlo simulations)
+### Kanban Integration
+- Visualizing Sprint work on a Kanban board: columns mapped to workflow stages (To Do → In Dev → In Review → QA → Done), WIP limits per column
+- Measuring cycle time (item start → item done) and lead time (item created → item done) to identify bottlenecks
+- Cumulative Flow Diagrams: reading band widths for WIP, band slopes for throughput, narrowing bands for bottleneck detection
+- Probabilistic forecasting with Monte Carlo: "85% chance of completing 20 items by Sprint end" based on historical throughput data
+- Using Service Level Expectations (SLEs): "85% of items complete within 5 days" for setting and communicating delivery predictability
 
 ### Scaled Scrum & Scaling Frameworks
 
-#### Nexus Framework (Scaled Professional Scrum — SPS)
-- Nexus Integration Team: coordinating cross-team dependencies
-- Nexus Sprint Planning, Nexus Daily Scrum, Nexus Sprint Review, Nexus Sprint Retrospective
-- Integrated Increment: a single, potentially releasable product every Sprint across 3–9 teams
-- Identifying and minimizing inter-team dependencies
-- Shared Definition of Done across multiple Scrum Teams
+#### Nexus Framework
+- Nexus Integration Team: composed of Scrum Masters and rotating developers from each team, responsible for coaching integration practices and resolving cross-team technical conflicts
+- Nexus Sprint Planning: two parts — all teams align on a shared Sprint Goal and identify inter-team dependencies, then individual teams plan their Sprint Backlogs with integration points explicit
+- Cross-team dependency management: dependency boards mapping team-to-team handoffs, minimizing dependencies by aligning team boundaries to product architecture (e.g., feature teams over component teams)
+- Integrated Increment: all 3–9 Scrum Teams produce a single combined, tested, releasable Increment every Sprint — requires shared CI pipeline, automated integration tests, and a unified Definition of Done
+- Nexus Sprint Retrospective: two phases — representatives from all teams identify cross-team improvement areas first, then individual teams retrospect on their own process
 
 #### Scrum of Scrums
-- Lightweight coordination technique for synchronizing multiple Scrum Teams
-- Scrum of Scrums meeting: ambassadors from each team surface impediments, dependencies, and progress
-- Scaling ceremonies without replacing team-level Scrum events
-- Used for tactical coordination at the program or department level
+- Ambassador model: one representative per Scrum Team attends Scrum of Scrums, reporting blockers, inter-team dependencies, and integration risks
+- Meeting cadence: typically 2–3 times per week (not daily) to balance coordination overhead with execution time
+- Focus on three questions per team: What did our team complete since last SoS? What will we complete before next SoS? What cross-team blockers need escalation?
+- Escalation path: Scrum of Scrums surfaces issues; a Chief Scrum Master or RTE owns resolution and tracks follow-up across teams
+- Differs from Nexus in that it adds no new artifacts or roles — it's a lightweight overlay on existing Scrum without framework-level changes
 
 #### LeSS (Large-Scale Scrum)
-- LeSS (2–8 teams) and LeSS Huge (8+ teams with Requirement Areas)
-- One Product Owner, one Product Backlog, one potentially shippable Increment
-- Feature teams over component teams for end-to-end customer value delivery
-- LeSS principles: More with LeSS, Whole-product focus, Customer-centric, Lean thinking, Systems thinking
-- LeSS events: Overall Sprint Planning (Part 1 & 2), Multi-Team Daily Scrum, Overall Sprint Review, Overall Retrospective
+- Single Product Owner managing one Product Backlog across all teams — avoids backlog fragmentation and ensures unified prioritization
+- Feature teams: each team can work on any part of the codebase, reducing handoffs and enabling end-to-end delivery of customer features
+- Sprint coordination: teams select items from the shared backlog during a joint Sprint Planning Part 1, then plan independently in Part 2
+- Overall Sprint Review: all teams demo to stakeholders together, providing a whole-product view instead of per-team showcases
+- Overall Retrospective: cross-team systemic issues are addressed by team representatives + management, focusing on organizational impediments
+- LeSS Huge (8+ teams): introduces Requirement Areas — each area has an Area Product Owner and a subset of teams, while the overall Product Owner coordinates across areas
 
 #### SAFe (Scaled Agile Framework)
-- Agile Release Train (ART): multiple teams aligned to a common PI (Program Increment) cadence
-- PI Planning: face-to-face event for synchronizing teams across the ART, creating team and program PI objectives
-- SAFe roles: Release Train Engineer (RTE), Product Manager, System Architect, Business Owners
-- SAFe levels: Team, Program (ART), Large Solution, Portfolio
-- Portfolio SAFe: Lean Portfolio Management, Epics, Value Streams, Portfolio Kanban
-- Built-in Quality, Continuous Delivery Pipeline, DevSecOps integration
-- SAFe Core Values: Alignment, Built-in Quality, Transparency, Program Execution
+- Agile Release Train (ART): 5–12 teams working on a shared cadence (typically 8–12 week Program Increment), synchronized through PI Planning
+- PI Planning execution: 2-day face-to-face event where teams break features into stories, identify cross-team dependencies on a program board, negotiate scope with Product Management, and commit to PI Objectives with business value scores
+- Release Train Engineer (RTE): facilitates ART-level events, escalates program-level impediments, tracks program predictability via PI Objective achievement rates
+- Inspect & Adapt (I&A): ART-level retrospective at the end of each PI — quantitative review of PI metrics + problem-solving workshop using root cause analysis (e.g., fishbone diagrams)
+- Innovation and Planning (IP) iteration: dedicated Sprint within each PI for hackathons, tech debt reduction, PI Planning preparation, and cross-team knowledge sharing
+- Continuous Delivery Pipeline: Continuous Exploration (hypotheses, MVPs) → Continuous Integration (automated builds, tests) → Continuous Deployment (feature flags, canary releases) → Release on Demand
+- Portfolio Kanban: Epics flow through Funnel → Reviewing → Analyzing → Portfolio Backlog → Implementing → Done, with Lean Business Cases evaluated at each stage gate
 
-### Technical Agile Practices (PSD I)
-- Test-Driven Development (TDD) and Behavior-Driven Development (BDD)
-- Continuous Integration and Continuous Delivery (CI/CD) within Scrum
-- Refactoring and technical debt management
-- Pair programming and mob programming
-- Emergent architecture and evolutionary design
+### Technical Agile Practices
+- Test-Driven Development: Red → Green → Refactor cycle; writing the failing test first forces clear API design before implementation
+- Behaviour-Driven Development: Gherkin (Given/When/Then) scenarios as living documentation, bridging business language and automated tests
+- Continuous Integration: every commit triggers build + full test suite; broken builds are fixed immediately ("stop the line"); trunk-based development with short-lived feature branches
+- Continuous Delivery: every green build is a release candidate; deployment pipeline stages (build → unit test → integration test → staging → canary → production)
+- Refactoring discipline: extract method, rename, introduce parameter object, replace conditional with polymorphism — applied continuously, not in dedicated "refactoring Sprints"
+- Pair programming: driver/navigator rotation for knowledge sharing, complex problem solving, and real-time code review; mob programming for high-stakes design decisions
+- Emergent architecture: starting simple and evolving design through refactoring as requirements clarify, rather than big upfront design; using Architecture Decision Records (ADRs) to document key trade-offs
