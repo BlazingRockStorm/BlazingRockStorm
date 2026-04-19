@@ -353,6 +353,39 @@ Practical skills reference. Intended for AI agents when designing or working on 
 - Build triggers: SCM polling (`pollSCM`), webhook-driven builds, scheduled cron (`@daily`, `H 2 * * *`), upstream job dependencies with `build job:` step
 - Post-build actions: `junit` for test result publishing, `archiveArtifacts` for build outputs, Slack/email notifications in `post { failure {} success {} }` blocks
 
+##### GitHub Actions
+- Workflow syntax: `on:` triggers (push, pull_request, schedule, workflow_dispatch, workflow_call), `jobs:` with `needs:` for sequential dependency chains, `if:` conditions for environment-gated deployments
+- Reusable workflows (`workflow_call`) and composite actions for DRY pipeline logic; versioning shared actions with semantic tags (`uses: org/action@v2`)
+- Matrix strategy: `strategy.matrix` with `include` / `exclude` for parallel cross-platform or multi-version builds; `fail-fast: false` to collect all matrix results before stopping
+- Secrets and variables: `${{ secrets.* }}` for encrypted values, `${{ vars.* }}` for non-sensitive config, environment-scoped secrets for production isolation; `GITHUB_TOKEN` for API and package registry access
+- Environments with deployment protection rules: required reviewers, wait timers, and environment-specific secrets for staging vs production gates
+- Caching: `actions/cache` with cache keys built from lock file hashes (`hashFiles('**/Gemfile.lock')`); `actions/setup-*` built-in caching flags for language runtimes
+- Artifact management: `actions/upload-artifact` / `actions/download-artifact` for passing build outputs between jobs; retention period configuration
+- Self-hosted runners: runner groups for org-level access control, ephemeral runners for security isolation, labels for targeting specific hardware (GPU, ARM, high-memory)
+- OpenID Connect (OIDC): keyless cloud authentication for AWS (`aws-actions/configure-aws-credentials`), GCP, and Azure — short-lived tokens instead of stored cloud credentials
+
+---
+
+#### Observability
+
+##### New Relic
+- APM agent instrumentation: Ruby (`newrelic_rpm` gem), Python (`newrelic` package), Go (`newrelic/go-agent`) for automatic transaction tracing, external service calls, and database query performance
+- Custom instrumentation: `NewRelic::Agent.record_metric` for business-level metrics, `NewRelic::Agent.notice_error` for enriching error events with custom attributes
+- Distributed tracing: W3C Trace Context propagation across microservices, cross-account trace linking, trace waterfall for identifying latency in multi-hop request flows
+- NRQL (New Relic Query Language): `SELECT`, `WHERE`, `FACET`, `TIMESERIES`, `EXTRAPOLATE` for building dashboards; `BASELINE` alerts for anomaly detection without fixed thresholds
+- Alerts and notification channels: NRQL-based alert conditions, signal loss detection for missing data gaps, multi-condition policies, PagerDuty / Slack integrations
+- Infrastructure monitoring: host-level CPU/memory/disk/network via the Infrastructure agent; process monitoring; cloud integrations (AWS CloudWatch metrics pulled via polling or Metric Streams)
+- Browser and synthetics: Real User Monitoring (RUM) for Core Web Vitals, scripted browser monitors for critical user journey uptime checks
+
+##### Datadog
+- Unified agent: single `datadog-agent` collecting metrics, logs, and traces; DogStatsD for custom metric submission from application code (`increment`, `gauge`, `histogram`, `distribution`)
+- APM and Distributed Tracing: `dd-trace` libraries for auto-instrumentation of web frameworks and DB clients; Continuous Profiler for CPU/memory flame graphs in production without overhead
+- Log Management: structured log ingestion with JSON pipeline processors; log-to-metric conversions for counting error patterns; Log Archives to S3/GCS for long-term retention; correlation between logs and APM traces via `dd.trace_id` injection
+- Dashboards and Notebooks: `@` annotations on graphs for event overlays (deployments, incidents); template variables for multi-service/multi-env boards; Notebooks for incident post-mortems with embedded live graphs
+- Monitors: threshold, change, anomaly (ML-based), forecast, and outlier monitor types; composite monitors combining multiple signals; downtime scheduling for planned maintenance
+- Synthetic Monitoring: API tests for endpoint health and response validation; browser tests with recorded user journeys; CI visibility integration for blocking deploys on synthetic failures
+- Service Catalog and Service Map: upstream/downstream dependency visualization, SLO tracking (error budget burn rate alerts), ownership metadata for on-call routing
+
 ---
 
 ## Management
