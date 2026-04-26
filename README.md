@@ -101,3 +101,18 @@ Here are some ideas to get you started:
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...
 -->
+# SKILLS
+
+The `skills/` directory contains Copilot agent customization files that provide domain-specific guidance for GitHub Copilot.
+
+## Usage
+
+Mention the context in your Copilot chat and the agent will load the right skill automatically:
+
+| What to say | Skill invoked |
+|---|---|
+| _(default / no framework mentioned)_ | Ruby + Rails |
+| `"use Rails"` | Ruby + Rails |
+| `"use Sinatra"` | Ruby + Sinatra |
+| `"use Roda"` | Ruby + Roda |
+| `"pure Ruby"` / `"write a gem"` / `"CLI tool"` | Ruby only |
