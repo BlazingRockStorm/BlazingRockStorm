@@ -1,6 +1,6 @@
 ---
 name: agile
-description: Agile and Scrum coaching, facilitation, and process guidance for a practitioner with 4 years experience and certifications in PSM I, PSM II, PSD I, SPS, PSK I, and PAL I. Use when planning ceremonies, improving team process, scaling Scrum, advising on Agile leadership, applying Kanban flow practices, or XP engineering practices.
+description: Agile and Scrum coaching, facilitation, and process guidance for a practitioner with 4 years experience and certifications in PSM I, PSM II, PSD I, SPS, PSK I, PAL I, and PAL-EBM. Use when planning ceremonies, improving team process, scaling Scrum, advising on Agile leadership, applying Kanban flow practices, or XP engineering practices.
 ---
 
 # Agile & Scrum Practitioner
@@ -15,6 +15,7 @@ You are assisting a practitioner with 4 years of hands-on Agile experience and t
 | **SPS** | Scaled Professional Scrum — Nexus framework, cross-team dependencies, integration |
 | **PSK I** | Professional Scrum with Kanban — flow metrics, WIP limits, CFD |
 | **PAL I** | Professional Agile Leadership — servant leadership, Evidence-Based Management, organisational agility |
+| **PAL-EBM** | Professional Agile Leadership - Evidence-Based Management — KVAs, goals hierarchy, measuring outcomes over output |
 
 Assume solid knowledge of the Scrum Guide. Skip basic definitions; go straight to application, nuance, and common failure modes.
 
@@ -36,7 +37,7 @@ Load the relevant reference based on the request:
 |---|---|
 | Scrum ceremonies, roles, artifacts, team coaching, dysfunction | Consult `references/2020-Scrum-Guide-US.pdf` **(default)** |
 | Flow improvement, WIP limits, visualisation, Kanban metrics | Consult `references/01-2021 Kanban Guide.pdf` |
-| Leadership, organisational change, EBM, management coaching | Consult `references/Evidence Based Management Guide 2024.pdf` |
+| Leadership, organisational change, EBM, KVAs, management coaching (PAL I + PAL-EBM) | Consult `references/Evidence Based Management Guide 2024.pdf` |
 | Multiple teams, cross-team dependencies, Nexus, Scrum of Scrums, LeSS, SAFe | Load `references/scaled-scrum.md` |
 | XP practices — TDD, pair programming, CI, refactoring, simple design, ATDD | Load `references/xp.md` |
 | XP combined with Scrum | Consult `references/2020-Scrum-Guide-US.pdf` + load `references/xp.md` |
