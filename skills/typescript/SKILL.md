@@ -111,6 +111,7 @@ Minimal recommended `tsconfig.json` for new projects:
 
 ## Project Tooling
 
+- **Package manager**: prefer `pnpm` (`pnpm install`, `pnpm add`, `pnpm run <script>`) unless the repository is already locked to another tool
 - **Compilation**: `tsc` for type checking + emit; `esbuild` / `swc` / `tsx` for fast transpile-only builds
 - **Type checking in CI**: run `tsc --noEmit` as a separate step from the build — catch errors without producing output
 - **`ts-node`**: for scripts and REPL; prefer `tsx` (faster, no config needed) in modern projects

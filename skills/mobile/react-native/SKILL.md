@@ -44,7 +44,7 @@ You are assisting a System/DevOps engineer with strong React experience, expert 
 | **Expo with development build** | `expo` + `ios/` and `android/` dirs both present | Treat as Expo — use config plugins, run via `expo run:ios`/`run:android` |
 | **Bare React Native** | No `expo`, full `ios/` and `android/` projects | Use community libraries directly; native config is hand-edited |
 | **Legacy** | RN < 0.71, no Hermes, old arch only | Stay within existing version; flag migrations only when asked |
-| **Constrained** | No npm registry access, corporate proxy | Use a private registry (`.npmrc`), confirm before `npm install` |
+| **Constrained** | No package registry access, corporate proxy | Use a private registry (`.npmrc`), confirm before `pnpm install` |
 
 ### Step 3 — State what you found
 
@@ -56,7 +56,7 @@ _"RN 0.76 with Expo SDK 52, Expo Router, Zustand, NativeWind — I'll use file-b
 
 | Factor | Expo (managed + dev build) | Bare React Native |
 |---|---|---|
-| Setup time | Minutes (`npx create-expo-app`) | Hours (Xcode + Gradle config) |
+| Setup time | Minutes (`pnpm dlx create-expo-app`) | Hours (Xcode + Gradle config) |
 | Native module support | Most via Expo SDK + config plugins; custom needs a dev build | Anything — direct native code access |
 | Build pipeline | EAS Build (cloud) or local | `xcodebuild` + `gradle` directly |
 | OTA updates | EAS Update built-in | CodePush (deprecating) or self-host |
@@ -489,7 +489,7 @@ module.exports = {
 };
 ```
 
-Auto-fix: `npm run lint -- --fix`
+Auto-fix: `pnpm run lint -- --fix`
 
 ---
 
@@ -497,18 +497,18 @@ Auto-fix: `npm run lint -- --fix`
 
 | Task | Command |
 |---|---|
-| Create Expo project | `npx create-expo-app@latest my-app -t default` |
-| Create bare RN project | `npx @react-native-community/cli init MyApp` |
-| Install JS deps | `npm install` (or `bun install`, `pnpm install`) |
-| Install iOS pods | `npx pod-install` (bare) — Expo dev builds run this automatically |
-| Run on iOS (Expo) | `npx expo run:ios` |
-| Run on Android (Expo) | `npx expo run:android` |
-| Run on iOS (bare) | `npx react-native run-ios` |
-| Run on Android (bare) | `npx react-native run-android` |
-| Start Metro bundler | `npx expo start` (Expo) / `npx react-native start` (bare) |
-| Run tests | `npm test` |
-| Type-check | `npx tsc --noEmit` |
-| Lint | `npm run lint` |
-| Clear Metro cache | `npx expo start -c` / `npx react-native start --reset-cache` |
-| Regenerate native dirs (Expo) | `npx expo prebuild --clean` |
+| Create Expo project | `pnpm dlx create-expo-app@latest my-app -t default` |
+| Create bare RN project | `pnpm dlx @react-native-community/cli init MyApp` |
+| Install JS deps | `pnpm install` |
+| Install iOS pods | `pnpm dlx pod-install` (bare) — Expo dev builds run this automatically |
+| Run on iOS (Expo) | `pnpm expo run:ios` |
+| Run on Android (Expo) | `pnpm expo run:android` |
+| Run on iOS (bare) | `pnpm exec react-native run-ios` |
+| Run on Android (bare) | `pnpm exec react-native run-android` |
+| Start Metro bundler | `pnpm expo start` (Expo) / `pnpm exec react-native start` (bare) |
+| Run tests | `pnpm test` |
+| Type-check | `pnpm exec tsc --noEmit` |
+| Lint | `pnpm run lint` |
+| Clear Metro cache | `pnpm expo start -c` / `pnpm exec react-native start --reset-cache` |
+| Regenerate native dirs (Expo) | `pnpm expo prebuild --clean` |
 | Build for store (Expo) | `eas build --platform all` — see `references/deployment.md` |
