@@ -136,6 +136,7 @@ Never mix styling approaches in the same project.
 
 ## Build Tooling
 
+- **Package manager**: prefer `pnpm` for JS/TS frontend projects (`pnpm install`, `pnpm add`, `pnpm run <script>`), not npm
 - **Vite** — default for new projects; fast dev server, ESM-native
 - **Next.js** — when SSR, SSG, or file-based routing is needed (React)
 - **Nuxt** — equivalent for Vue

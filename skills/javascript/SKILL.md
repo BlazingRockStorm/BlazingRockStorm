@@ -83,7 +83,7 @@ const [users, posts] = await Promise.all([fetchUsers(), fetchPosts()])
 
 ## Project Tooling
 
-- **npm scripts**: define all common tasks in `package.json` `scripts`; never rely on global CLIs that aren't in `devDependencies`
+- **pnpm scripts (preferred)**: define all common tasks in `package.json` `scripts` and run them with `pnpm run`; avoid global CLIs that are not in `devDependencies`
 - **ESLint**: run `eslint --fix` for auto-correct; configure in `eslint.config.mjs` (flat config, modern) or `.eslintrc.json`
 - **Prettier**: formatting only — do not mix lint and format rules; integrate with `eslint-config-prettier`
 - **Node version**: pin with `.nvmrc` or `engines` field in `package.json`
