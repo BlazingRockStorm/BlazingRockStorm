@@ -74,9 +74,12 @@ System/DevOps Engineer. Ruby advocator.
 [![AWS Knowledge: Security Champion - Training Badge](https://images.credly.com/size/80x80/images/478cdcb9-9b92-4893-9c95-617ad0f28257/blob)](https://www.credly.com/badges/20007e71-10de-4d33-85d8-a68473dcc744)
 [![Get Started with Google Workspace Tools Skill Badge](https://images.credly.com/size/80x80/images/7e78d94e-d10b-4699-a75a-96115b24c238/image.png)](https://www.credly.com/badges/03aa6321-6fb6-4dc0-84b3-8b4e31a6b487)
 [![Integrate BigQuery Data and Google Workspace using Apps Script Skill Badge](https://images.credly.com/size/80x80/images/02190f6d-01c5-457d-9ac0-b7fe4f31c7e6/image.png)](https://www.credly.com/badges/06a224b9-58a7-476c-bb43-8af49aac275d)
+[![Well-Architected Proficient](https://images.credly.com/size/80x80/images/b870667f-00a3-48d7-b988-9c02b441b883/image.png)](https://www.credly.com/badges/dcc7ff32-4469-419c-8de4-ec596a70dc4c)
+[![AWS Certified Solutions Architect – Associate](https://images.credly.com/size/80x80/images/0e284c3f-5164-4b21-8660-0d84737941bc/image.png)](https://www.credly.com/badges/17efe8cf-9ea6-459f-ade9-dc22fff82000)
+[![AWS Certified Developer – Associate](https://images.credly.com/size/80x80/images/b9feab85-1a43-4f6c-99a5-631b88d5461b/image.png)](https://www.credly.com/badges/35bcfa40-10ae-420f-8e7c-3dd35c1c16aa)
 [![Gemini Certified Educator](https://images.credly.com/size/80x80/images/112ec159-14fe-4e09-ae43-5e2077dc9c4e/ba3fc85c-244c-4299-ad5d-78eb53fcf02f_cached_image_20251211-31-m2p4od.png)](https://www.credly.com/users/duc-quan-hoang/badges)
 [![Gemini Certified University Student](https://images.credly.com/size/80x80/images/bcc8525a-092e-4631-b7c2-708a682f2524/796d6530-106a-46a5-ad61-eb2011811c39_cached_image_20251208-30-5nbfk4.png)](https://www.credly.com/users/duc-quan-hoang/badges)
-[![Ruby Certified Ruby Examination Gold Ver 3](https://images.credly.com/size/80x80/images/e8632e4d-ef37-4307-82a0-da7f4800d876/73363045-129f-4940-a4c0-252ac9ffc300_cached_image_20251208-34-kuv1wj.png)](https://www.credly.com/users/duc-quan-hoang/badges)
+[![Ruby Certified Ruby Examination Gold Ver 3](https://images.credly.com/size/80x80/images/7228345f-4663-44d6-8978-c649c448e8f0/7173b592-4fbb-4cad-8459-95877fddb3d0_cached_image_20260609-32-ymlb3t.png)](https://www.credly.com/users/duc-quan-hoang/badges)
 [![Ruby Certified Ruby Examination Silver](https://images.credly.com/size/80x80/images/8a0eb4a4-39e5-443e-ba94-c511ab43b9a1/ded77e72-39e7-4300-9326-bda4050c1b53_cached_image_20260528-31-py0p0h.png)](https://www.credly.com/users/duc-quan-hoang/badges)
 <!--END_SECTION:badges-->
 
