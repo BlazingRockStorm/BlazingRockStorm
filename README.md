@@ -19,12 +19,6 @@ System/DevOps Engineer. Ruby advocator.
 [![image](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:quanhoangd129@gmail.com)
 
 # Certs
-## Credentials:
-
-[<img src="https://badges.images.credential.net/1495071229333.png" width="110">](https://www.credential.net/d6b90bcc-0a14-4039-94ba-5443ea9dd343 "Ruby Certified Ruby Examination Silver")
-[<img src="https://templates.images.credential.net/16599277022875216138354534652590.png" width="110">](https://www.credential.net/3c8a0b29-cc9d-4249-a148-ddf1800e53d9 "Ruby Certified Ruby Examination Gold Ver 3")
-
-## Credly:
 <!--START_SECTION:badges-->
 [![AWS Certified SysOps Administrator – Associate](https://images.credly.com/size/80x80/images/f0d3fbb9-bfa7-4017-9989-7bde8eaf42b1/image.png)](https://www.credly.com/badges/01470659-ab59-49b6-9887-da223273bb0f)
 [![Professional Agile Leadership™ I (PAL I)](https://images.credly.com/size/80x80/images/78c772ee-6b3c-4348-ac66-58ac5a2cf581/image.png)](https://www.credly.com/badges/0d1fcdb4-154f-4a5f-8e9b-5401c6382efb)
