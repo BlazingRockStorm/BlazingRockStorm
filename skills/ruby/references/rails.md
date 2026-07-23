@@ -2,6 +2,19 @@
 
 Use this reference for full-stack Rails applications, API-only Rails apps, or when inheriting an existing Rails project.
 
+## Creating resources
+
+**Always generate — never hand-author files.** Models, migrations, controllers,
+mailers, jobs, and other resources are created with `bin/rails g`
+(`bin/rails generate`) first — never by writing files into `app/` or
+`db/migrate/` from scratch.
+
+- New model + table: `bin/rails g model <Name> field:type field:type ...`
+- Schema change only: `bin/rails g migration <DescriptiveName> field:type ...`
+- The generator names the file, stamps the correct migration version, wires `references`/foreign keys, and scaffolds the matching spec. Reproducing that by hand is error-prone and drifts from Rails conventions.
+- Only edit the generated file *afterward* for things the generator can't express (composite/unique indexes, `null:`/`default:` tweaks, explanatory comments).
+- Never create the file yourself just to add those.
+
 ## Architecture
 
 - Fat models, skinny controllers — move business logic to service objects (`app/services/`)
@@ -16,6 +29,11 @@ Use this reference for full-stack Rails applications, API-only Rails apps, or wh
 - Always add database-level constraints in addition to model validations — validations can be bypassed
 - Use `includes` / `eager_load` to prevent N+1 queries; check with Bullet gem in development
 - Prefer `find_each` / `find_in_batches` over `all.each` for large datasets
+
+## Migrations
+- Generate migrations with `bin/rails g migration` / `bin/rails g model` (see "Creating resources"). **Do NOT write files in `db/migrate/` from scratch** — even a "trivial" one-column change goes through the generator.
+- 1 table per migration file
+- Apply with `bin/rails db:migrate` and let it regenerate `schema.rb`; never hand-edit `schema.rb`
 
 ## Controllers
 
