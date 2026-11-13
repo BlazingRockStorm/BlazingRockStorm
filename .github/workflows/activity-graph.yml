@@ -1,6 +1,7 @@
 name: Update profile graphs
 
-# Renders the activity graph and the GitHub stats card inside this repo
+# Renders the activity graph, GitHub stats card and top-languages card inside
+# this repo
 # instead of loading them from shared public Vercel instances, which are
 # unreliable.
 on:
@@ -69,9 +70,26 @@ jobs:
           path: assets/github-stats.svg
           token: ${{ github.token }}
           fail_on_error: "true"
+      - name: Render summary cards
+        uses: vn7n24fzkq/github-profile-summary-cards@release
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        with:
+          USERNAME: BlazingRockStorm
+          THEME: tokyonight
+          AUTO_PUSH: false
+      - name: Keep the top-languages card
+        run: |
+          card=$(find profile-summary-card-output/tokyonight -name '*most-commit-language.svg' | head -n 1)
+          if [ -z "$card" ] || ! grep -q '<svg' "$card"; then
+            echo "Top-languages card was not generated." >&2
+            exit 1
+          fi
+          cp "$card" assets/top-languages.svg
+          rm -rf profile-summary-card-output
       - name: Commit graphs
         run: |
-          git add "$GRAPH_FILE" assets/github-stats.svg
+          git add "$GRAPH_FILE" assets/github-stats.svg assets/top-languages.svg
           if git diff --cached --quiet; then
             echo "Graphs unchanged."
             exit 0
