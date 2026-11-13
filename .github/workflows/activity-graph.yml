@@ -1,0 +1,75 @@
+name: Update activity graph
+
+# Renders the activity graph inside this repo instead of loading it from the
+# shared github-readme-activity-graph.vercel.app instance, which stopped
+# serving the image.
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: "17 16 * * *" # daily, 01:17 JST
+  workflow_dispatch:
+
+concurrency:
+  group: activity-graph
+  cancel-in-progress: true
+
+env:
+  GRAPH_QUERY: "username=BlazingRockStorm&theme=react-dark"
+  GRAPH_FILE: assets/activity-graph.svg
+
+jobs:
+  render:
+    name: Render activity graph
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check out graph renderer
+        uses: actions/checkout@v4
+        with:
+          repository: Ashutosh00710/github-readme-activity-graph
+          ref: 0962e9461de815933d462e8b98c7ce566cada8fb
+          path: .graph-renderer
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Render graph
+        env:
+          TOKEN: ${{ github.token }}
+          PORT: "5100"
+        run: |
+          cd .graph-renderer
+          npm ci
+          npx ts-node src/main.ts &
+          for i in $(seq 1 30); do
+            curl -fsS "http://localhost:$PORT/" >/dev/null 2>&1 && break
+            sleep 2
+          done
+
+          # /data returns JSON on success and an error image otherwise;
+          # /graph returns an error image with status 200, so check here first.
+          data=$(curl -fsS "http://localhost:$PORT/data?$GRAPH_QUERY")
+          if ! grep -q '"contributions"' <<<"$data"; then
+            echo "Could not fetch contribution data:" >&2
+            echo "$data" | head -c 500 >&2
+            exit 1
+          fi
+
+          mkdir -p "$(dirname "$GITHUB_WORKSPACE/$GRAPH_FILE")"
+          curl -fsS "http://localhost:$PORT/graph?$GRAPH_QUERY" -o "$GITHUB_WORKSPACE/$GRAPH_FILE"
+          grep -q '<svg' "$GITHUB_WORKSPACE/$GRAPH_FILE"
+      - name: Commit graph
+        run: |
+          git add "$GRAPH_FILE"
+          if git diff --cached --quiet; then
+            echo "Graph unchanged."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Update activity graph"
+          git pull --rebase origin main
+          git push origin HEAD:main
