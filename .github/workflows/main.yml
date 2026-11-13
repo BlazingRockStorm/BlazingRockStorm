@@ -14,4 +14,3 @@ jobs:
         uses: pemtajo/badge-readme@main
         with:
           CREDLY_USER: duc-quan-hoang
-          BADGE_SIZE: 110
