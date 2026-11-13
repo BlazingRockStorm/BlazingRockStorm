@@ -14,6 +14,6 @@ jobs:
       contents: write
     steps:
       - name: Badges - Readme
-        uses: pemtajo/badge-readme@main
+        uses: pemtajo/badge-readme@3.2
         with:
           CREDLY_USER: duc-quan-hoang
