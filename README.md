@@ -89,7 +89,7 @@ System/DevOps Engineer. Ruby advocator.
 
 [![BlazingRockStorm's GitHub Top languages](http://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=BlazingRockStorm&theme=tokyonight)](https://github.com/vn7n24fzkq/github-profile-summary-cards) 
 
-[![BlazingRockStorm activity graph](https://github-readme-activity-graph.vercel.app/graph?username=BlazingRockStorm&theme=react-dark)](https://github.com/ashutosh00710/github-readme-activity-graph)
+[![BlazingRockStorm activity graph](./assets/activity-graph.svg)](https://github.com/ashutosh00710/github-readme-activity-graph)
 
 <!--
 **BlazingRockStorm/BlazingRockStorm** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
