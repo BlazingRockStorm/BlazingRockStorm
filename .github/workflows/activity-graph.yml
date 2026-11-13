@@ -1,8 +1,8 @@
-name: Update activity graph
+name: Update profile graphs
 
-# Renders the activity graph inside this repo instead of loading it from the
-# shared github-readme-activity-graph.vercel.app instance, which stopped
-# serving the image.
+# Renders the activity graph and the GitHub stats card inside this repo
+# instead of loading them from shared public Vercel instances, which are
+# unreliable.
 on:
   push:
     branches:
@@ -61,15 +61,23 @@ jobs:
           mkdir -p "$(dirname "$GITHUB_WORKSPACE/$GRAPH_FILE")"
           curl -fsS "http://localhost:$PORT/graph?$GRAPH_QUERY" -o "$GITHUB_WORKSPACE/$GRAPH_FILE"
           grep -q '<svg' "$GITHUB_WORKSPACE/$GRAPH_FILE"
-      - name: Commit graph
+      - name: Render GitHub stats card
+        uses: readme-tools/github-readme-stats-action@v2
+        with:
+          card: stats
+          options: username=BlazingRockStorm&show_icons=true&theme=tokyonight
+          path: assets/github-stats.svg
+          token: ${{ github.token }}
+          fail_on_error: "true"
+      - name: Commit graphs
         run: |
-          git add "$GRAPH_FILE"
+          git add "$GRAPH_FILE" assets/github-stats.svg
           if git diff --cached --quiet; then
-            echo "Graph unchanged."
+            echo "Graphs unchanged."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "Update activity graph"
+          git commit -m "Update profile graphs"
           git pull --rebase origin main
           git push origin HEAD:main
