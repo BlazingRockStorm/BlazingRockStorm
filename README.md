@@ -91,7 +91,8 @@ System/DevOps Engineer. Ruby advocator.
 
 # GitHub Stats
 
-[![BlazingRockStorm's GitHub Top languages](http://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=BlazingRockStorm&theme=tokyonight)](https://github.com/vn7n24fzkq/github-profile-summary-cards) 
+| [![BlazingRockStorm's GitHub stats](./assets/github-stats.svg)](https://github.com/anuraghazra/github-readme-stats) | [![BlazingRockStorm's GitHub Top languages](http://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=BlazingRockStorm&theme=tokyonight)](https://github.com/vn7n24fzkq/github-profile-summary-cards) |
+| ------------- | ------------- |
 
 [![BlazingRockStorm activity graph](./assets/activity-graph.svg)](https://github.com/ashutosh00710/github-readme-activity-graph)
 
