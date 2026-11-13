@@ -13,25 +13,7 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: actions/checkout@v4
-      # Use the action's Credly scraper, but run our own script so the badges
-      # are written as fixed-size <img> tags (the action itself only emits
-      # Markdown images, which cannot be sized).
       - name: Badges - Readme
-        uses: pemtajo/badge-readme@main
-        env:
-          BADGE_SIZE: 110
+        uses: pemtajo/badge-readme@3.2
         with:
           CREDLY_USER: duc-quan-hoang
-          entrypoint: /app/.venv/bin/python
-          args: /github/workspace/.github/scripts/update_badges.py
-      - name: Commit updated README
-        run: |
-          if git diff --quiet -- README.md; then
-            echo "No badge changes."
-            exit 0
-          fi
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "Updated README with new badges" -- README.md
-          git push
